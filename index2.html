@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>一年级下英语口语考试-在线练习</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+				font-size: 16px;
+			}
+			header,footer{
+				text-align: center;
+				font-family: "微软雅黑";
+			}
+			header{
+				border-bottom: 1px dashed rgba(0,0,0,.1);
+			}
+			footer{
+				border-top: 1px dashed rgba(0,0,0,.1);
+			}
+			.content{
+				width: 800px;
+				margin: 0 auto;
+				position: relative;
+				transform-origin: 0px 0px;
+			}
+			.content a{
+				display: inline-block;
+				margin: 10px 10px;
+				text-decoration: none;
+				color: #000;
+				font:2em/1.5 "comic sans ms";
+			}
+			.soundSource{
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
+			
+			@media (max-width:800px ) {
+				header{
+					font-size: 14px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>一年级英语口语考试</h1>
+			<p>小朋友们快来练习，争当"英语小达人"吧！</p>
+			<p>单击单词听发音，加载稍慢，单击之后可能稍有延迟！</p>
+		</header>
+		<section class="content">
+			<h2>单词（要求认读）</h2>
+			<ol>
+			<li>
+				五官：
+				<a href="#" data-cn="眼睛" data-info="eye">eye</a>
+				<a href="#" data-cn="耳朵" data-info="ear">ear</a>
+				<a href="#" data-cn="鼻子" data-info="nose">nose</a>
+				<a href="#" data-cn="脸" data-info="face">face</a>
+				<a href="#" data-cn="嘴" data-info="mouth">mouth</a>
+			</li>
+			<li>
+				身体部位：
+				<a href="#" data-cn="头" data-info="head">head</a>
+				<a href="#" data-cn="胳膊" data-info="arm">arm</a>
+				<a href="#" data-cn="手指" data-info="finger">finger</a>
+				<a href="#" data-cn="手" data-info="hand">hand</a>
+				<a href="#" data-cn="身体" data-info="body">body</a>
+				<a href="#" data-cn="脚" data-info="foot">foot</a>
+				<a href="#" data-cn="腿" data-info="leg">leg</a>
+			</li>
+			<li>
+				文具：
+				<a href="#" data-cn="钢笔" data-info="pen">pen</a>
+				<a href="#" data-cn="铅笔" data-info="pencil">pencil</a>
+				<a href="#" data-cn="铅笔盒" data-info="pencil-case">pencil-case</a>
+				<a href="#" data-cn="尺子" data-info="ruler">ruler</a>
+				<a href="#" data-cn="书" data-info="book">book</a>
+				<a href="#" data-cn="书包" data-info="bag">bag</a>
+			</li>
+			<li>
+				学校：
+				<a href="#" data-cn="学校" data-info="school">school</a>
+				<a href="#" data-cn="教室" data-info="classroom">classroom</a>
+				<a href="#" data-cn="餐厅" data-info="canteen">canteen</a>
+				<a href="#" data-cn="体育馆" data-info="gym">gym</a>
+				<a href="#" data-cn="操场" data-info="playground">playground</a>
+			</li>
+			</ol>
+		</section>
+		<section class="content">
+			<h2>句型</h2>
+			<ol>
+				<li>
+					能用句型I have……介绍五官。
+					<a href="#" data-cn="我有一双大眼睛。" data-info="I have big eyes">I have big eyes.</a>
+					<a href="#" data-cn="我有一个小嘴。" data-info="I have a small mouth">I have a small mouth.</a>
+				</li>
+				<li>
+					能用句型This is……介绍自己的身体部位。
+					<a href="#" data-cn="这是我的身体。" data-info="This is my body">This is my body.</a>
+					<a href="#" data-cn="这是我的脚。" data-info="This is my foot">This is my foot.</a>
+				</li>
+				<li>
+					能用句型Look, I have……介绍自己的文具。
+					<a href="#" data-cn="看，我有个一个新铅笔！" data-info="Look, I have a new pencil">Look, I have a new pencil.</a>
+				</li>
+				<li>
+					能用句型This is our……介绍学校设施并进行评价。
+					<a href="#" data-cn="这是我们的餐厅，很大的餐厅。" data-info="This is our canteen. It's so big.">This is our canteen. It's so big.</a>
+				</li>
+			</ol>
+		</section>
+			<select class="soundSource" name="soundSource">
+				<option value="baidu">百度英式发音</option>
+				<option value="baidu2">百度美式发音</option>
+				<option value="youdao">有道英式发音</option>
+				<option value="youdao2">有道美式发音</option>
+			</select>
+		</div>
+		
+		<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			var source='baidu';
+			$(".soundSource").change(function(){
+				source=$(this).val();
+			});
+			
+			//小屏适应
+			var ratio=$(window).width()/800;
+			if (ratio<=1) {
+				$(".content").css('margin','0px');
+				$(".content").css('transform','scale('+ratio+')');
+			}
+			
+			$(".content a").each(function(){
+				var curStr=$(this).data('cn');
+				$(this).attr('title',curStr);
+			});
+			
+			$(".content a").click(function(event){
+				event.preventDefault();
+				
+				var curStr=$(this).data('info');
+				var soundStr;
+				
+				//判断发音来源
+				switch (source){
+					case 'baidu':
+						soundStr="https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=uk&text=";
+						break;
+					case 'baidu2':
+						soundStr="https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=";
+						break;	
+					case 'youdao':
+						soundStr="http://dict.youdao.com/openapi/speech?type=1&audio=";
+						break;	
+					case 'youdao2':
+						soundStr="http://dict.youdao.com/openapi/speech?type=2&audio=";
+						break;	
+					default:
+						break;
+				}
+				
+				var curSrc=soundStr+curStr;
+				audio=new Audio();
+				audio.src=curSrc;
+				audio.load();
+				audio.play();
+			});
+		</script>
+		<footer>王一诺爸爸制作</footer>
+	</body>
+</html>

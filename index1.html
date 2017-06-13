@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>一年级上英语口语考试-在线练习</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			header,footer{
+				text-align: center;
+				font-family: "微软雅黑";
+			}
+			header{
+				border-bottom: 1px dashed rgba(0,0,0,.1);
+			}
+			footer{
+				border-top: 1px dashed rgba(0,0,0,.1);
+			}
+			.imgList{
+				width: 600px;
+				margin: 0 auto;
+				position: relative;
+				transform-origin: 0px 0px;
+			}
+			.imgList a{
+				display: inline-block;
+				margin: 10px 20px;
+				text-decoration: none;
+				color: #000;
+			}
+			.imgList a:nth-child(21),
+			.imgList a:nth-child(22),
+			.imgList a:nth-child(23),
+			.imgList a:nth-child(24),
+			.imgList a:nth-child(25){
+				margin: 10px 10px;
+			}
+			.imgList a:nth-child(27),
+			.imgList a:nth-child(28),
+			.imgList a:nth-child(29),
+			.imgList a:nth-child(31),
+			.imgList a:nth-child(32),
+			.imgList a:nth-child(33){
+				margin: 10px 33px;
+			}
+			.imgList a img{
+				border: none;
+			}
+			.soundSource{
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
+			
+			@media (max-width:600px ) {
+				header{
+					font-size: 12px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>一年级英语口语考试</h1>
+			<p>小朋友们快来练习，争当"英语小达人"吧！</p>
+			<p>单击图片听发音，加载稍慢，单击之后可能稍有延迟！</p>
+		</header>
+		<div class="imgList">
+			<a href="#" data-info="Hello, I'm XXX. Nice to meet you.">Hello, I'm XXX. Nice to meet you.</a> <br />
+			<a href="#" data-info="one"><img src="img/2.jpg" alt="" /></a>
+			<a href="#" data-info="two"><img src="img/3.jpg" alt="" /></a>
+			<a href="#" data-info="three"><img src="img/4.jpg" alt="" /></a>
+			<a href="#" data-info="four"><img src="img/5.jpg" alt="" /></a>
+			<a href="#" data-info="five"><img src="img/6.jpg" alt="" /></a> <br />
+			<a href="#" data-info="six"><img src="img/7.jpg" alt="" /></a>
+			<a href="#" data-info="seven"><img src="img/8.jpg" alt="" /></a>
+			<a href="#" data-info="eight"><img src="img/9.jpg" alt="" /></a>
+			<a href="#" data-info="nine"><img src="img/10.jpg" alt="" /></a>
+			<a href="#" data-info="ten"><img src="img/11.jpg" alt="" /></a> <br />
+			<a href="#" data-info="cat"><img src="img/12.jpg" alt="" /></a>
+			<a href="#" data-info="dog"><img src="img/13.jpg" alt="" /></a>
+			<a href="#" data-info="hen"><img src="img/14.jpg" alt="" /></a>
+			<a href="#" data-info="duck"><img src="img/15.jpg" alt="" /></a>
+			<a href="#" data-info="pig"><img src="img/16.jpg" alt="" /></a>  <br />
+			<a href="#" data-info="yellow"><img src="img/17.jpg" alt="" /></a>
+			<a href="#" data-info="green"><img src="img/18.jpg" alt="" /></a>
+			<a href="#" data-info="blue"><img src="img/19.jpg" alt="" /></a>
+			<a href="#" data-info="white"><img src="img/20.jpg" alt="" /></a>
+			<a href="#" data-info="red"><img src="img/21.jpg" alt="" /></a> <br />
+			<a href="#" data-info="apple"><img src="img/22.jpg" alt="" /></a>
+			<a href="#" data-info="banana"><img src="img/23.jpg" alt="" /></a>
+			<a href="#" data-info="pear"><img src="img/24.jpg" alt="" /></a> <br />
+			<a href="#" data-info="peach"><img src="img/25.jpg" alt="" /></a>
+			<a href="#" data-info="orange"><img src="img/26.jpg" alt="" /></a>
+			<a href="#" data-info="watermelon"><img src="img/27.jpg" alt="" /></a>
+			<select class="soundSource" name="soundSource">
+				<option value="baidu">百度英式发音</option>
+				<option value="baidu2">百度美式发音</option>
+				<option value="youdao">有道英式发音</option>
+				<option value="youdao2">有道美式发音</option>
+			</select>
+		</div>
+		
+		<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			var source='baidu';
+			$(".soundSource").change(function(){
+				source=$(this).val();
+			});
+			
+			//小屏适应
+			var ratio=$(window).width()/600;
+			if (ratio<=1) {
+				$(".imgList").css('margin','0px');
+				$(".imgList").css('transform','scale('+ratio+')');
+			}
+			
+			$(".imgList a").each(function(){
+				var curStr=$(this).data('info');
+				$(this).attr('title',curStr);
+			});
+			
+			$(".imgList a").click(function(event){
+				event.preventDefault();
+				
+				var curStr=$(this).data('info');
+				var soundStr;
+				
+				//判断发音来源
+				switch (source){
+					case 'baidu':
+						soundStr="https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=uk&text=";
+						break;
+					case 'baidu2':
+						soundStr="https://sp0.baidu.com/-rM1hT4a2gU2pMbgoY3K/gettts?lan=en&text=";
+						break;	
+					case 'youdao':
+						soundStr="http://dict.youdao.com/openapi/speech?type=1&audio=";
+						break;	
+					case 'youdao2':
+						soundStr="http://dict.youdao.com/openapi/speech?type=2&audio=";
+						break;	
+					default:
+						break;
+				}
+				
+				var curSrc=soundStr+curStr;
+				audio=new Audio();
+				audio.src=curSrc;
+				audio.load();
+				audio.play();
+			});
+		</script>
+		<footer>王一诺爸爸制作</footer>
+	</body>
+</html>
