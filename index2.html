@@ -27,6 +27,9 @@
 				position: relative;
 				transform-origin: 0px 0px;
 			}
+			.content strong{
+				color: brown;
+			}
 			.content a{
 				display: inline-block;
 				margin: 0.5rem;
@@ -92,14 +95,20 @@
 					<a href="#" data-cn="操场" data-info="playground">playground</a>
 				</li>
 			</ol>
+			<select class="soundSource" name="soundSource">
+				<option value="baidu">百度英式发音</option>
+				<option value="baidu2">百度美式发音</option>
+				<option value="youdao">有道英式发音</option>
+				<option value="youdao2">有道美式发音</option>
+			</select>
 		</section>
 		<section class="content">
 			<h2>句型</h2>
 			<ol>
 				<li>
 					能用句型I have……介绍五官。
-					<a href="#" data-cn="我有一双大眼睛。" data-info="I have big eyes">I have big eyes.</a>
-					<a href="#" data-cn="我有一个小嘴。" data-info="I have a small mouth">I have a small mouth.</a>
+					<a href="#" data-cn="我有一双大眼睛。" data-info="I have big eyes">I have <strong>big</strong> eyes.</a>
+					<a href="#" data-cn="我有一个小嘴。" data-info="I have a small mouth">I have <strong>a small</strong> mouth.</a>
 				</li>
 				<li>
 					能用句型This is……介绍自己的身体部位。
@@ -108,7 +117,7 @@
 				</li>
 				<li>
 					能用句型Look, I have……介绍自己的文具。
-					<a href="#" data-cn="看，我有个一个新铅笔！" data-info="Look, I have a new pencil">Look, I have a new pencil.</a>
+					<a href="#" data-cn="看，我有个一个新铅笔！" data-info="Look, I have a new pencil">Look, I have a <strong>new</strong> pencil.</a>
 				</li>
 				<li>
 					能用句型This is our……介绍学校设施并进行评价。
@@ -116,13 +125,7 @@
 				</li>
 			</ol>
 		</section>
-			<select class="soundSource" name="soundSource">
-				<option value="baidu">百度英式发音</option>
-				<option value="baidu2">百度美式发音</option>
-				<option value="youdao">有道英式发音</option>
-				<option value="youdao2">有道美式发音</option>
-			</select>
-		</div>
+			
 		
 		<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 		<script type="text/javascript">
